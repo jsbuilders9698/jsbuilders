@@ -1,509 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jsbuilders | High Converting Store</title>
-<link rel="icon" type="image/jpg" href="logo.jpg">
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Inter', sans-serif;
-background-color: #0a0a0a;
-color: #fff;
-}
-.gradient-bg {
-background: linear-gradient(135deg, #0a3a1c 0%, #0a0a0a 100%);
-}
-.glass-card {
-background: rgba(255, 255, 255, 0.05);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.1);
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
--webkit-appearance: none;
-margin: 0;
-}
-.accordion-content {
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.3s ease-out;
-}
-.accordion-content.active {
-max-height: 500px;
-}
-</style>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#00FF85',secondary:'#0a3a1c'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jsbuilders | High Converting Store</title>
+  <link rel="icon" href="logo.jpg" type="image/jpg">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #0a3a1c 0%, #0a0a0a 100%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .accordion-content.active {
+      max-height: 500px;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00FF85',
+            secondary: '#0a3a1c'
+          },
+          borderRadius: {
+            button: '8px'
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body class="min-h-screen">
-<!-- Header -->
+    <!-- Header -->
 <header class="fixed w-full z-50 bg-black/80 backdrop-blur-md">
-<div class="container mx-auto px-4 py-3 flex justify-between items-center">
-<a href="#" class="flex items-center space-x-2">
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-code-box-line text-2xl text-primary"></i>
-</div>
-<span class="text-white font-semibold text-lg">Jsbuilders</span>
-</a>
-<nav class="hidden md:flex space-x-8">
-<a href="#" class="text-white hover:text-primary transition">Home</a>
-<a href="#pricing" class="text-white hover:text-primary transition">Pricing</a>
-<a href="#contact" class="text-white hover:text-primary transition">Contact Us</a>
-</nav>
-<div class="flex items-center space-x-4">
-<button class="bg-primary text-black font-semibold px-6 py-2 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition">
-    <a href="https://example.com/grab-your-theme" target="_blank"> ENROLL NOW</a>
-<button class="md:hidden w-10 h-10 flex items-center justify-center text-white">
-<i class="ri-menu-line ri-lg"></i>
-</button>
-</div>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="gradient-bg pt-28 pb-16">
-<div class="container mx-auto px-4">
-<div class="flex flex-col items-center text-center">
-<div class="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
-<span class="text-white text-sm font-medium">FROM ASPIRING ENTREPRENEUR TO ACHIEVER</span>
-</div>
-<h1 class="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-[#9CFFD3]">LAUNCH YOUR<br>HIGH CONVERTING<br>SHOPIFY STORE</h1>
-<p class="text-lg text-gray-300 mb-8 max-w-2xl">Get 40+ Premium Shopify Themes for Just $40 – One-Time Payment, No Subscription!</p>
-<div class="flex flex-col sm:flex-row gap-4 mb-8">
-<button class="bg-white text-black font-semibold px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition flex items-center">
-    <a href="https://example.com/grab-your-theme" target="_blank">GRAB YOURS</a>
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="#" class="flex items-center space-x-2">
+    <div class="w-8 h-8 flex items-center justify-center">
+    <i class="ri-code-box-line text-2xl text-primary"></i>
+    </div>
+    <span class="text-white font-semibold text-lg">Jsbuilders</span>
+    </a>
+    <nav class="hidden md:flex space-x-8">
+    <a href="#" class="text-white hover:text-primary transition">Home</a>
+    <a href="#pricing" class="text-white hover:text-primary transition">Pricing</a>
+    <a href="#contact" class="text-white hover:text-primary transition">Contact Us</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+    <button class="bg-primary text-black font-semibold px-6 py-2 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition">
+        <a href="https://jsbuilders.gumroad.com/l/lvbdwq?_gl=1*j47x5*_ga*MTQwMTExMzMyLjE3NDYwNTcxODE.*_ga_6LJN6D94N6*czE3NDkzNTQxNjQkbzkkZzEkdDE3NDkzNTU3NzYkajQyJGwwJGgw" target="_blank"> ENROLL NOW</a>
+    <button class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+    <i class="ri-menu-line ri-lg"></i>
+    </button>
+    </div>
+    </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-28 pb-16">
+    <div class="container mx-auto px-4">
+    <div class="flex flex-col items-center text-center">
+    <div class="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
+    <span class="text-white text-sm font-medium">FROM ASPIRING ENTREPRENEUR TO ACHIEVER</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-[#9CFFD3]">LAUNCH YOUR<br>HIGH CONVERTING<br>SHOPIFY STORE</h1>
+    <p class="text-lg text-gray-300 mb-8 max-w-2xl">Get 40+ Premium Shopify Themes for Just $40 – One-Time Payment, No Subscription!</p>
+    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+    <button class="bg-white text-black font-semibold px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition flex items-center">
+        <a href="https://jsbuilders.gumroad.com/l/lvbdwq?_gl=1*j47x5*_ga*MTQwMTExMzMyLjE3NDYwNTcxODE.*_ga_6LJN6D94N6*czE3NDkzNTQxNjQkbzkkZzEkdDE3NDkzNTU3NzYkajQyJGwwJGgw" target="_blank">GRAB YOURS</a>
+    
+    
+    </button>
+    </div>
+    <div class="flex items-center gap-2">
+    <div class="flex -space-x-2">
+    <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">2k+</div>
+    </div>
+    <div class="flex items-center">
+    <div class="flex text-yellow-400">
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    </div>
+    <span class="text-white text-sm ml-2">Join 3000+ Brands</span>
+    </div>
+    </div>
+    <div class="flex items-center space-x-4">
+    <div class="flex">
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-half-fill ri-lg text-primary"></i>
+    </div>
+    <span class="text-white font-medium">4.9/5 on Trustpilot</span>
+    <span class="text-gray-400">(352 reviews)</span>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-20 bg-black">
+    <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+    <div class="w-full md:w-1/2">
+    <img src="https://readdy.ai/api/search-image?query=professional%20shopify%20store%20interface%20screenshot%2C%20clean%20modern%20e-commerce%20website%20design%2C%20product%20showcase%2C%20high%20converting%20layout%2C%20dark%20mode%20theme%20with%20green%20accents&width=600&height=400&seq=2&orientation=landscape" alt="Shopify Store Example" class="rounded-lg w-full shadow-2xl border border-white/10">
+    </div>
+    <div class="w-full md:w-1/2">
+    <h2 class="text-3xl font-bold mb-8">Launch Your Shopify Store in Under 30 Minutes</h2>
+    <div class="space-y-6">
+    <div class="flex items-start">
+    <div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full mr-4 mt-1">
+    <i class="ri-check-line ri-lg text-primary"></i>
+    </div>
+    <div>
+    <h3 class="text-xl font-medium mb-2">Optimized for Conversions</h3>
+    <p class="text-gray-400">Strategic placement of CTAs and product displays to maximize your conversion rate.</p>
+    </div>
+    </div>
+    <div class="flex items-start">
+    <div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full mr-4 mt-1">
+    <i class="ri-check-line ri-lg text-primary"></i>
+    </div>
+    <div>
+    <h3 class="text-xl font-medium mb-2">Mobile-First Design</h3>
+    <p class="text-gray-400">Fully responsive layout that looks perfect on all devices, from desktop to mobile.</p>
+    </div>
+    </div>
+    <div class="flex items-start">
+    <div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full mr-4 mt-1">
+    <i class="ri-check-line ri-lg text-primary"></i>
+    </div>
+    <div>
+    <h3 class="text-xl font-medium mb-2">Lightning Fast Loading</h3>
+    <p class="text-gray-400">Optimized code and assets for the fastest possible page load times.</p>
+    </div>
+    </div>
+    <div class="flex items-start">
+    <div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full mr-4 mt-1">
+    <i class="ri-check-line ri-lg text-primary"></i>
+    </div>
+    <div>
+    <h3 class="text-xl font-medium mb-2">SEO Friendly Structure</h3>
+    <p class="text-gray-400">Built with search engines in mind to help your store rank higher.</p>
+    </div>
+    </div>
+    </div>
+    <button class="mt-10 bg-primary text-black font-semibold px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition">
+        <a href="https://jsbuilders.gumroad.com/l/lvbdwq?_gl=1*j47x5*_ga*MTQwMTExMzMyLjE3NDYwNTcxODE.*_ga_6LJN6D94N6*czE3NDkzNTQxNjQkbzkkZzEkdDE3NDkzNTU3NzYkajQyJGwwJGgw" target="_blank">GET STARTED NOW</a>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 gradient-bg">
+    <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">How Does It Work?</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">Setting up your high-converting Shopify store is simple with our premium theme. Follow these four easy steps:</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="glass-card p-8 rounded-xl">
+    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-6">
+    <span class="text-primary font-bold">1</span>
+    </div>
+    <h3 class="text-xl font-bold mb-4">Purchase Theme</h3>
+    <p class="text-gray-300">Buy the theme with a one-time payment using USDT cryptocurrency.</p>
+    </div>
+    <div class="glass-card p-8 rounded-xl">
+    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-6">
+    <span class="text-primary font-bold">2</span>
+    </div>
+    <h3 class="text-xl font-bold mb-4">Download Files</h3>
+    <p class="text-gray-300">Get instant access to download the theme files after purchase.</p>
+    </div>
+    <div class="glass-card p-8 rounded-xl">
+    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-6">
+    <span class="text-primary font-bold">3</span>
+    </div>
+    <h3 class="text-xl font-bold mb-4">Install Theme</h3>
+    <p class="text-gray-300">Upload the theme to your Shopify store with our easy installation guide.</p>
+    </div>
+    <div class="glass-card p-8 rounded-xl">
+    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-6">
+    <span class="text-primary font-bold">4</span>
+    </div>
+    <h3 class="text-xl font-bold mb-4">Start Selling</h3>
+    <p class="text-gray-300">Customize your store with your products and start making sales.</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-black">
+    <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">Join hundreds of store owners who have transformed their business with our theme.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="glass-card p-8 rounded-xl">
+    <div class="flex mb-6">
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    </div>
+    <p class="text-gray-300 mb-6">"This theme completely transformed my store. I saw a 37% increase in conversion rate within the first month. The design is clean, modern, and my customers love how easy it is to navigate."</p>
+    <div class="flex items-center">
+    <div>
+    <h4 class="font-medium">Michael Rodriguez</h4>
+    <p class="text-gray-400 text-sm">Fashion Store Owner</p>
+    </div>
+    </div>
+    </div>
+    <div class="glass-card p-8 rounded-xl">
+    <div class="flex mb-6">
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    </div>
+    <p class="text-gray-300 mb-6">"Installation was a breeze, and the support team was incredibly helpful. The theme is fast, looks professional, and has all the features I need. My sales have doubled since switching!"</p>
+    <div class="flex items-center">
+    <div>
+    <h4 class="font-medium">Sarah Johnson</h4>
+    <p class="text-gray-400 text-sm">Beauty Products Store</p>
+    </div>
+    </div>
+    </div>
+    <div class="glass-card p-8 rounded-xl">
+    <div class="flex mb-6">
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-half-fill ri-lg text-primary"></i>
+    </div>
+    <p class="text-gray-300 mb-6">"The mobile experience is outstanding. Most of my customers shop on their phones, and this theme makes it so easy for them. The checkout process is smooth and I've seen fewer abandoned carts."</p>
+    <div class="flex items-center">
+    <div>
+    <h4 class="font-medium">David Thompson</h4>
+    <p class="text-gray-400 text-sm">Electronics Store</p>
+    </div>
+    </div>
+    </div>
+    <div class="glass-card p-8 rounded-xl">
+    <div class="flex mb-6">
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    </div>
+    <p class="text-gray-300 mb-6">"Worth every penny! The theme paid for itself in the first week. The design is stunning and professional. My customers frequently comment on how nice my store looks."</p>
+    <div class="flex items-center">
+    <div>
+    <h4 class="font-medium">Jennifer Williams</h4>
+    <p class="text-gray-400 text-sm">Home Decor Shop</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 gradient-bg">
+    <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">One-time payment, lifetime updates, no hidden fees or subscriptions.</p>
+    </div>
+    <div class="max-w-md mx-auto glass-card p-8 rounded-xl border border-primary/30">
+    <div class="text-center mb-8">
+    <h3 class="text-2xl font-bold mb-2">Premium Theme</h3>
+    <div class="flex items-center justify-center">
+    <span class="text-4xl font-bold">$40</span>
+    <span class="text-gray-400 ml-2">one-time</span>
+    </div>
+    </div>
+    <div class="space-y-4 mb-8">
+    <div class="flex items-center">
+    <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+    <i class="ri-check-line"></i>
+    </div>
+    <span>Full Shopify Theme Package</span>
+    </div>
+    <div class="flex items-center">
+    <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+    <i class="ri-check-line"></i>
+    </div>
+    <span>Lifetime Updates</span>
+    </div>
+    <div class="flex items-center">
+    <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+    <i class="ri-check-line"></i>
+    </div>
+    <span>Installation Guide</span>
+    </div>
+    <div class="flex items-center">
+    <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+    <i class="ri-check-line"></i>
+    </div>
+    <span>Mobile-Optimized Design</span>
+    </div>
+    <div class="flex items-center">
+    <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+    <i class="ri-check-line"></i>
+    </div>
+    <span>SEO Optimized Structure</span>
+    </div>
+    <div class="flex items-center">
+    <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+    <i class="ri-check-line"></i>
+    </div>
+    <span>24/7 Email Support</span>
+    </div>
+    </div>
+    <button class="w-full bg-primary text-black font-semibold px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition mb-4">
+        <a href="https://jsbuilders.gumroad.com/l/lvbdwq?_gl=1*j47x5*_ga*MTQwMTExMzMyLjE3NDYwNTcxODE.*_ga_6LJN6D94N6*czE3NDkzNTQxNjQkbzkkZzEkdDE3NDkzNTU3NzYkajQyJGwwJGgw" target="_blank">Buy Now in USDT</a>
+    </button>
+    <div class="text-center text-sm text-gray-400">
+    <p>Instant download after payment</p>
+    <p>Compatible with all Shopify plans</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-black">
+    <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">Find answers to common questions about our Shopify theme.</p>
+    </div>
+    <div class="max-w-3xl mx-auto space-y-4">
+    <div class="glass-card rounded-xl overflow-hidden">
+    <div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
+    <h3 class="text-xl font-medium">How do I install the theme?</h3>
+    <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-add-line accordion-icon"></i>
+    </div>
+    </div>
+    <div class="accordion-content px-6 pb-6">
+    <p class="text-gray-300">After purchasing, you'll receive a .zip file. In your Shopify admin, go to Online Store > Themes > Upload theme. Select the .zip file and wait for it to upload. Then click "Publish" to make it your active theme. We also provide a detailed installation guide with step-by-step instructions.</p>
+    </div>
+    </div>
+    <div class="glass-card rounded-xl overflow-hidden">
+    <div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
+    <h3 class="text-xl font-medium">Is this a one-time payment?</h3>
+    <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-add-line accordion-icon"></i>
+    </div>
+    </div>
+    <div class="accordion-content px-6 pb-6">
+    <p class="text-gray-300">Yes, this is a one-time payment of $40 USDT. There are no recurring fees or hidden charges. You'll receive all future updates to the theme at no additional cost.</p>
+    </div>
+    </div>
+    <div class="glass-card rounded-xl overflow-hidden">
+    <div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
+    <h3 class="text-xl font-medium">Can I use this theme on multiple stores?</h3>
+    <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-add-line accordion-icon"></i>
+    </div>
+    </div>
+    <div class="accordion-content px-6 pb-6">
+    <p class="text-gray-300">Each purchase is valid for one Shopify store. If you want to use the theme on multiple stores, you'll need to purchase additional licenses. Contact us for bulk pricing if you need multiple licenses.</p>
+    </div>
+    </div>
+    <div class="glass-card rounded-xl overflow-hidden">
+    <div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
+    <h3 class="text-xl font-medium">Do I need coding knowledge to use this theme?</h3>
+    <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-add-line accordion-icon"></i>
+    </div>
+    </div>
+    <div class="accordion-content px-6 pb-6">
+    <p class="text-gray-300">No coding knowledge is required. Our theme is designed to be user-friendly with an intuitive customization interface. You can easily change colors, fonts, and layouts using Shopify's theme editor. For advanced customizations, basic HTML/CSS knowledge may be helpful.</p>
+    </div>
+    </div>
+    <div class="glass-card rounded-xl overflow-hidden">
+    <div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
+    <h3 class="text-xl font-medium">Is the theme mobile responsive?</h3>
+    <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-add-line accordion-icon"></i>
+    </div>
+    </div>
+    <div class="accordion-content px-6 pb-6">
+    <p class="text-gray-300">Yes, our theme is fully responsive and optimized for all devices including desktops, tablets, and mobile phones. It automatically adjusts to provide the best shopping experience regardless of screen size.</p>
+    </div>
+    </div>
+    <div class="glass-card rounded-xl overflow-hidden">
+    <div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
+    <h3 class="text-xl font-medium">Do you offer refunds?</h3>
+    <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-add-line accordion-icon"></i>
+    </div>
+    </div>
+    <div class="accordion-content px-6 pb-6">
+    <p class="text-gray-300">Due to the digital nature of our product, we do not offer refunds once the theme has been downloaded. However, we provide extensive documentation and support to ensure you can successfully implement the theme on your store.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!-- Final CTA Section -->
+    <section class="py-20 gradient-bg">
+    <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Shopify Store?</h2>
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Join hundreds of successful store owners who have increased their sales with our premium theme.</p>
+    <button class="bg-primary text-black font-semibold px-10 py-4 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition text-lg mb-8">Get Started Today</button>
+    <div class="flex items-center justify-center">
+    <div class="flex">
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-fill ri-lg text-primary"></i>
+    <i class="ri-star-half-fill ri-lg text-primary"></i>
+    </div>
+    <span class="text-white font-medium ml-2">4.9/5 on Trustpilot</span>
+    <span class="text-gray-400 ml-2">(352 reviews)</span>
+    </div>
+    </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+    <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+    <h3 class="text-2xl font-bold mb-6">Join The Community</h3>
+    <div class="flex justify-center space-x-6">
+    <a href="https://www.facebook.com/Jsbuilders" class="w-12 h-12 flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition">
+        <i class="ri-facebook-fill ri-lg text-white"></i>
+    </a>
+    <a href="https://www.instagram.com/jsbuilders.site/" class="w-12 h-12 flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition">
+    <i class="ri-instagram-fill ri-lg text-white"></i>
+    </a>
+    <a href="https://t.me/+226d-eC0ogYwYzQ1" class="w-12 h-12 flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition">
+    <i class="ri-telegram-fill-lg text-white"></i>
+    
+    </a>
+    <i class=""></i>
+    </a>
+    </div>
+    </div>
+    <div class="border-t border-white/10 pt-10 text-center">
+    <p class="text-gray-400 mb-4">© 2025 Premium Shopify Themes. All rights reserved.</p>
+    <div class="flex justify-center space-x-6 text-sm">
+    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+    <a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a>
+    </div>
+    </div>
+    </div>
+    </footer>
+    </div>
 
+<!-- Content goes here. Add back your body HTML such as header, hero section, features, etc. from your original file -->
 
-</button>
-</div>
-<div class="flex items-center gap-2">
-<div class="flex -space-x-2">
-<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">2k+</div>
-</div>
-<div class="flex items-center">
-<div class="flex text-yellow-400">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-</div>
-<span class="text-white text-sm ml-2">Join 3000+ Brands</span>
-</div>
-</div>
-<div class="flex items-center space-x-4">
-<div class="flex">
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-half-fill ri-lg text-primary"></i>
-</div>
-<span class="text-white font-medium">4.9/5 on Trustpilot</span>
-<span class="text-gray-400">(352 reviews)</span>
-</div>
-</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('.accordion-icon');
+        const isActive = content.classList.contains('active');
+        document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('ri-subtract-line', 'ri-add-line'));
+        if (!isActive) {
+          content.classList.add('active');
+          icon.classList.add('ri-subtract-line');
+        } else {
+          icon.classList.add('ri-add-line');
+        }
+      });
+    });
 
-</div>
-</div>
-</section>
-<!-- Features Section -->
-<section class="py-20 bg-black">
-<div class="container mx-auto px-4">
-<div class="flex flex-col md:flex-row items-center gap-12">
-<div class="w-full md:w-1/2">
-<img src="https://readdy.ai/api/search-image?query=professional%20shopify%20store%20interface%20screenshot%2C%20clean%20modern%20e-commerce%20website%20design%2C%20product%20showcase%2C%20high%20converting%20layout%2C%20dark%20mode%20theme%20with%20green%20accents&width=600&height=400&seq=2&orientation=landscape" alt="Shopify Store Example" class="rounded-lg w-full shadow-2xl border border-white/10">
-</div>
-<div class="w-full md:w-1/2">
-<h2 class="text-3xl font-bold mb-8">Launch Your Shopify Store in Under 30 Minutes</h2>
-<div class="space-y-6">
-<div class="flex items-start">
-<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full mr-4 mt-1">
-<i class="ri-check-line ri-lg text-primary"></i>
-</div>
-<div>
-<h3 class="text-xl font-medium mb-2">Optimized for Conversions</h3>
-<p class="text-gray-400">Strategic placement of CTAs and product displays to maximize your conversion rate.</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full mr-4 mt-1">
-<i class="ri-check-line ri-lg text-primary"></i>
-</div>
-<div>
-<h3 class="text-xl font-medium mb-2">Mobile-First Design</h3>
-<p class="text-gray-400">Fully responsive layout that looks perfect on all devices, from desktop to mobile.</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full mr-4 mt-1">
-<i class="ri-check-line ri-lg text-primary"></i>
-</div>
-<div>
-<h3 class="text-xl font-medium mb-2">Lightning Fast Loading</h3>
-<p class="text-gray-400">Optimized code and assets for the fastest possible page load times.</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full mr-4 mt-1">
-<i class="ri-check-line ri-lg text-primary"></i>
-</div>
-<div>
-<h3 class="text-xl font-medium mb-2">SEO Friendly Structure</h3>
-<p class="text-gray-400">Built with search engines in mind to help your store rank higher.</p>
-</div>
-</div>
-</div>
-<button class="mt-10 bg-primary text-black font-semibold px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition">
-    <a href="https://example.com/grab-your-theme" target="_blank">GET STARTED NOW</a>
-</div>
-</div>
-</div>
-</section>
-<!-- How It Works Section -->
-<section id="how-it-works" class="py-20 gradient-bg">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">How Does It Work?</h2>
-<p class="text-gray-300 max-w-2xl mx-auto">Setting up your high-converting Shopify store is simple with our premium theme. Follow these four easy steps:</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="glass-card p-8 rounded-xl">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-6">
-<span class="text-primary font-bold">1</span>
-</div>
-<h3 class="text-xl font-bold mb-4">Purchase Theme</h3>
-<p class="text-gray-300">Buy the theme with a one-time payment using USDT cryptocurrency.</p>
-</div>
-<div class="glass-card p-8 rounded-xl">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-6">
-<span class="text-primary font-bold">2</span>
-</div>
-<h3 class="text-xl font-bold mb-4">Download Files</h3>
-<p class="text-gray-300">Get instant access to download the theme files after purchase.</p>
-</div>
-<div class="glass-card p-8 rounded-xl">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-6">
-<span class="text-primary font-bold">3</span>
-</div>
-<h3 class="text-xl font-bold mb-4">Install Theme</h3>
-<p class="text-gray-300">Upload the theme to your Shopify store with our easy installation guide.</p>
-</div>
-<div class="glass-card p-8 rounded-xl">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-6">
-<span class="text-primary font-bold">4</span>
-</div>
-<h3 class="text-xl font-bold mb-4">Start Selling</h3>
-<p class="text-gray-300">Customize your store with your products and start making sales.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Testimonials Section -->
-<section id="testimonials" class="py-20 bg-black">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-<p class="text-gray-300 max-w-2xl mx-auto">Join hundreds of store owners who have transformed their business with our theme.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="glass-card p-8 rounded-xl">
-<div class="flex mb-6">
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-</div>
-<p class="text-gray-300 mb-6">"This theme completely transformed my store. I saw a 37% increase in conversion rate within the first month. The design is clean, modern, and my customers love how easy it is to navigate."</p>
-<div class="flex items-center">
-<div>
-<h4 class="font-medium">Michael Rodriguez</h4>
-<p class="text-gray-400 text-sm">Fashion Store Owner</p>
-</div>
-</div>
-</div>
-<div class="glass-card p-8 rounded-xl">
-<div class="flex mb-6">
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-</div>
-<p class="text-gray-300 mb-6">"Installation was a breeze, and the support team was incredibly helpful. The theme is fast, looks professional, and has all the features I need. My sales have doubled since switching!"</p>
-<div class="flex items-center">
-<div>
-<h4 class="font-medium">Sarah Johnson</h4>
-<p class="text-gray-400 text-sm">Beauty Products Store</p>
-</div>
-</div>
-</div>
-<div class="glass-card p-8 rounded-xl">
-<div class="flex mb-6">
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-half-fill ri-lg text-primary"></i>
-</div>
-<p class="text-gray-300 mb-6">"The mobile experience is outstanding. Most of my customers shop on their phones, and this theme makes it so easy for them. The checkout process is smooth and I've seen fewer abandoned carts."</p>
-<div class="flex items-center">
-<div>
-<h4 class="font-medium">David Thompson</h4>
-<p class="text-gray-400 text-sm">Electronics Store</p>
-</div>
-</div>
-</div>
-<div class="glass-card p-8 rounded-xl">
-<div class="flex mb-6">
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-</div>
-<p class="text-gray-300 mb-6">"Worth every penny! The theme paid for itself in the first week. The design is stunning and professional. My customers frequently comment on how nice my store looks."</p>
-<div class="flex items-center">
-<div>
-<h4 class="font-medium">Jennifer Williams</h4>
-<p class="text-gray-400 text-sm">Home Decor Shop</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Pricing Section -->
-<section id="pricing" class="py-20 gradient-bg">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-<p class="text-gray-300 max-w-2xl mx-auto">One-time payment, lifetime updates, no hidden fees or subscriptions.</p>
-</div>
-<div class="max-w-md mx-auto glass-card p-8 rounded-xl border border-primary/30">
-<div class="text-center mb-8">
-<h3 class="text-2xl font-bold mb-2">Premium Theme</h3>
-<div class="flex items-center justify-center">
-<span class="text-4xl font-bold">$40</span>
-<span class="text-gray-400 ml-2">one-time</span>
-</div>
-</div>
-<div class="space-y-4 mb-8">
-<div class="flex items-center">
-<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span>Full Shopify Theme Package</span>
-</div>
-<div class="flex items-center">
-<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span>Lifetime Updates</span>
-</div>
-<div class="flex items-center">
-<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span>Installation Guide</span>
-</div>
-<div class="flex items-center">
-<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span>Mobile-Optimized Design</span>
-</div>
-<div class="flex items-center">
-<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span>SEO Optimized Structure</span>
-</div>
-<div class="flex items-center">
-<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span>24/7 Email Support</span>
-</div>
-</div>
-<button class="w-full bg-primary text-black font-semibold px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition mb-4">Buy Now in USDT</button>
-<div class="text-center text-sm text-gray-400">
-<p>Instant download after payment</p>
-<p>Compatible with all Shopify plans</p>
-</div>
-</div>
-</div>
-</section>
-<!-- FAQ Section -->
-<section id="faq" class="py-20 bg-black">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-<p class="text-gray-300 max-w-2xl mx-auto">Find answers to common questions about our Shopify theme.</p>
-</div>
-<div class="max-w-3xl mx-auto space-y-4">
-<div class="glass-card rounded-xl overflow-hidden">
-<div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
-<h3 class="text-xl font-medium">How do I install the theme?</h3>
-<div class="w-6 h-6 flex items-center justify-center">
-<i class="ri-add-line accordion-icon"></i>
-</div>
-</div>
-<div class="accordion-content px-6 pb-6">
-<p class="text-gray-300">After purchasing, you'll receive a .zip file. In your Shopify admin, go to Online Store > Themes > Upload theme. Select the .zip file and wait for it to upload. Then click "Publish" to make it your active theme. We also provide a detailed installation guide with step-by-step instructions.</p>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden">
-<div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
-<h3 class="text-xl font-medium">Is this a one-time payment?</h3>
-<div class="w-6 h-6 flex items-center justify-center">
-<i class="ri-add-line accordion-icon"></i>
-</div>
-</div>
-<div class="accordion-content px-6 pb-6">
-<p class="text-gray-300">Yes, this is a one-time payment of $40 USDT. There are no recurring fees or hidden charges. You'll receive all future updates to the theme at no additional cost.</p>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden">
-<div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
-<h3 class="text-xl font-medium">Can I use this theme on multiple stores?</h3>
-<div class="w-6 h-6 flex items-center justify-center">
-<i class="ri-add-line accordion-icon"></i>
-</div>
-</div>
-<div class="accordion-content px-6 pb-6">
-<p class="text-gray-300">Each purchase is valid for one Shopify store. If you want to use the theme on multiple stores, you'll need to purchase additional licenses. Contact us for bulk pricing if you need multiple licenses.</p>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden">
-<div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
-<h3 class="text-xl font-medium">Do I need coding knowledge to use this theme?</h3>
-<div class="w-6 h-6 flex items-center justify-center">
-<i class="ri-add-line accordion-icon"></i>
-</div>
-</div>
-<div class="accordion-content px-6 pb-6">
-<p class="text-gray-300">No coding knowledge is required. Our theme is designed to be user-friendly with an intuitive customization interface. You can easily change colors, fonts, and layouts using Shopify's theme editor. For advanced customizations, basic HTML/CSS knowledge may be helpful.</p>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden">
-<div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
-<h3 class="text-xl font-medium">Is the theme mobile responsive?</h3>
-<div class="w-6 h-6 flex items-center justify-center">
-<i class="ri-add-line accordion-icon"></i>
-</div>
-</div>
-<div class="accordion-content px-6 pb-6">
-<p class="text-gray-300">Yes, our theme is fully responsive and optimized for all devices including desktops, tablets, and mobile phones. It automatically adjusts to provide the best shopping experience regardless of screen size.</p>
-</div>
-</div>
-<div class="glass-card rounded-xl overflow-hidden">
-<div class="accordion-header flex justify-between items-center p-6 cursor-pointer">
-<h3 class="text-xl font-medium">Do you offer refunds?</h3>
-<div class="w-6 h-6 flex items-center justify-center">
-<i class="ri-add-line accordion-icon"></i>
-</div>
-</div>
-<div class="accordion-content px-6 pb-6">
-<p class="text-gray-300">Due to the digital nature of our product, we do not offer refunds once the theme has been downloaded. However, we provide extensive documentation and support to ensure you can successfully implement the theme on your store.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA Section -->
-<section class="py-20 gradient-bg">
-<div class="container mx-auto px-4 text-center">
-<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Shopify Store?</h2>
-<p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Join hundreds of successful store owners who have increased their sales with our premium theme.</p>
-<button class="bg-primary text-black font-semibold px-10 py-4 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition text-lg mb-8">Get Started Today</button>
-<div class="flex items-center justify-center">
-<div class="flex">
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-fill ri-lg text-primary"></i>
-<i class="ri-star-half-fill ri-lg text-primary"></i>
-</div>
-<span class="text-white font-medium ml-2">4.9/5 on Trustpilot</span>
-<span class="text-gray-400 ml-2">(352 reviews)</span>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-black py-16">
-<div class="container mx-auto px-4">
-<div class="text-center mb-10">
-<h3 class="text-2xl font-bold mb-6">Join The Community</h3>
-<div class="flex justify-center space-x-6">
-<a href="https://www.facebook.com/Jsbuilders" class="w-12 h-12 flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition">
-    <i class="ri-facebook-fill ri-lg text-white"></i>
-</a>
-<a href="https://www.instagram.com/jsbuilders.site/" class="w-12 h-12 flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition">
-<i class="ri-instagram-fill ri-lg text-white"></i>
-</a>
-<a href="https://t.me/+226d-eC0ogYwYzQ1" class="w-12 h-12 flex items-center justify-center bg-white/5 hover:bg-white/10 rounded-full transition">
-<i class="ri-telegram-fill-lg text-white"></i>
-
-</a>
-<i class=""></i>
-</a>
-</div>
-</div>
-<div class="border-t border-white/10 pt-10 text-center">
-<p class="text-gray-400 mb-4">© 2025 Premium Shopify Themes. All rights reserved.</p>
-<div class="flex justify-center space-x-6 text-sm">
-<a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
-<a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
-<a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a>
-</div>
-</div>
-</div>
-</footer>
-<script id="accordion-script">
-document.addEventListener('DOMContentLoaded', function() {
-const accordionHeaders = document.querySelectorAll('.accordion-header');
-accordionHeaders.forEach(header => {
-header.addEventListener('click', function() {
-const content = this.nextElementSibling;
-const icon = this.querySelector('.accordion-icon');
-if (content.classList.contains('active')) {
-content.classList.remove('active');
-icon.classList.remove('ri-subtract-line');
-icon.classList.add('ri-add-line');
-} else {
-content.classList.add('active');
-icon.classList.remove('ri-add-line');
-icon.classList.add('ri-subtract-line');
-}
-});
-});
-});
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  });
 </script>
-<script id="smooth-scroll-script">
-document.addEventListener('DOMContentLoaded', function() {
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-if (targetId === '#') return;
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 80,
-behavior: 'smooth'
-});
-}
-});
-});
-});
-</script>
+
 </body>
 </html>
